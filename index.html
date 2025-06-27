@@ -773,7 +773,6 @@ document.addEventListener("DOMContentLoaded", () => {
     <div class="transport-item">
       <h3>📍 新北市立殯儀館</h3>
       <p><strong>地址：</strong>220036 新北市板橋區中正路560號</p>
-      <p><strong>電話：</strong><a href="tel:+886222571207">(02) 2257-1207 轉 9</a></p>
     </div>
     <div class="transport-item">
       <h4>🚍 公車資訊</h4>
@@ -800,7 +799,7 @@ document.addEventListener("DOMContentLoaded", () => {
 </section>
 
         <style>
-            .transport-section {
+ .transport-section {
   background-color: #f9f9f9;
   padding: 30px 20px;
   border-radius: 12px;
@@ -909,21 +908,29 @@ document.addEventListener("DOMContentLoaded", () => {
 }
             </style>
 
-        <script><script>
+
   // 點擊圖片顯示燈箱
-  document.querySelectorAll(".gallery-img").forEach(img => {
-    img.addEventListener("click", function () {
-      const lightbox = document.createElement("div");
-      lightbox.classList.add("lightbox");
+  <!-- 燈箱腳本 -->
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    const galleryImages = document.querySelectorAll(".gallery-img");
 
-      const lightboxImg = document.createElement("img");
-      lightboxImg.src = this.src;
+    galleryImages.forEach(img => {
+      img.addEventListener("click", function () {
+        const lightbox = document.createElement("div");
+        lightbox.classList.add("lightbox");
 
-      lightbox.appendChild(lightboxImg);
-      document.body.appendChild(lightbox);
+        const lightboxImg = document.createElement("img");
+        lightboxImg.src = this.src;
+        lightboxImg.alt = this.alt;
 
-      lightbox.addEventListener("click", () => {
-        lightbox.remove();
+        lightbox.appendChild(lightboxImg);
+        document.body.appendChild(lightbox);
+
+        // 點擊畫面任意處關閉
+        lightbox.addEventListener("click", () => {
+          lightbox.remove();
+        });
       });
     });
   });
@@ -931,25 +938,37 @@ document.addEventListener("DOMContentLoaded", () => {
 
 <style>
   .lightbox {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.8);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-  }
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeIn 0.3s ease-in-out;
+}
 
-  .lightbox img {
-    max-width: 90%;
-    max-height: 90%;
-    border-radius: 10px;
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
   }
-</style>
-    </script>
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+    </style>
 
 <!-- 页脚 -->
 <footer style="background-color: #f3f3f3; padding: 20px 0; text-align: center; font-family: Arial, sans-serif;">
