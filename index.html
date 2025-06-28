@@ -107,47 +107,61 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
     
     <header>
-        <img src="image/logo.png" alt="Logo" class="logo" loading="lazy">
-        <h1>江武昌先生 訃告</h1>
-    </header>
+  <img src="image/logo.png" alt="Logo" class="logo" loading="lazy">
+  <h1>江武昌先生 訃告</h1>
+</header>
 
-  <main>
-    <!-- 主要照片部分 -->
-    <section class="main-photo-section">
-      <img id="main-photo" src="image/IMG_6329.jpeg" alt="追思照片" loading="lazy">
-      
-      <p id="life-story">
-        <div><strong>我們摯愛的親人 江武昌先生</strong></div>
-        <div><strong>於114年06月25日</strong></div>
-        <div><strong>晚間09時27分</strong></div>
-        <div><strong>走完85年的人生旅程</strong></div>
-        <div><strong>留下我們永恆的追思與感恩</strong></div>
-        <br>
-        <div><strong>將於114年7月18日 星期五</strong></div>
-        <div><strong>於 新北市立殯儀館 ［ 明善廳 ］</strong></div>
-        <div><strong>舉辦告別追思奠禮</strong></div>
-        <br>
-        <div><strong>敬邀至親好友們蒞臨獻上哀思，</strong></div>
-        <div><strong>並向您獻上最深的敬意。</strong></div>
-        <br>
-        <div><strong>感謝您的關懷與陪伴，</strong></div>
-        <div><strong>家人們銘記在心，衷心感謝。</strong></div>
-        <br>
-        <div><strong>豎靈地點：龍華會館</strong></div>
-        <div><strong>地址：新北市板橋區長江路一段7號</strong></div>
-        <div><strong>出殯地點：板橋殯儀館</strong></div>
-        <div><strong>地址：新北市板橋區中正路560號</strong></div>
-      </p>
+<main>
+  <!-- 主要照片部分 -->
+  <section class="main-photo-section">
+    <img id="main-photo" src="image/IMG_6329.jpeg" alt="追思照片" loading="lazy">
+
+    <!-- 修正後：不使用 <p> 包 <div>，改為 section + div -->
+    <section id="life-story">
+      <div class="line"><strong>我們摯愛的親人 江武昌先生</strong></div>
+      <div class="line"><strong>於114年06月25日</strong></div>
+      <div class="line"><strong>晚間09時27分</strong></div>
+      <div class="line"><strong>走完85年的人生旅程</strong></div>
+      <div class="line"><strong>留下我們永恆的追思與感恩</strong></div>
+      <br>
+      <div class="line"><strong>將於114年7月18日 星期五</strong></div>
+      <div class="line"><strong>於 新北市立殯儀館 ［ 明善廳 ］</strong></div>
+      <div class="line"><strong>舉辦告別追思奠禮</strong></div>
+      <br>
+      <div class="line"><strong>敬邀至親好友們蒞臨獻上哀思，</strong></div>
+      <div class="line"><strong>並向您獻上最深的敬意。</strong></div>
+      <br>
+      <div class="line"><strong>感謝您的關懷與陪伴，</strong></div>
+      <div class="line"><strong>家人們銘記在心，衷心感謝。</strong></div>
+      <br>
+      <div class="line"><strong>豎靈地點：龍華會館</strong></div>
+      <div class="line"><strong>地址：新北市板橋區長江路一段7號</strong></div>
+      <div class="line"><strong>出殯地點：板橋殯儀館</strong></div>
+      <div class="line"><strong>地址：新北市板橋區中正路560號</strong></div>
     </section>
-  </main>
+  </section>
+</main>
 
-</body>
-        <style>
+<style>
 body {
   font-family: "Noto Serif", "Noto Sans TC", "MingLiU", serif;
   padding: 20px;
   background-color: #fdfdfd;
   margin: 0;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.logo {
+  width: 60px;
+  height: auto;
+}
+h1 {
+  font-size: 1.6em;
+  color: #333;
+  margin-top: 10px;
 }
 
 /* 進場動畫 */
@@ -157,6 +171,7 @@ body {
   }
 }
 
+/* 修正後的 #life-story 區塊 */
 #life-story {
   text-align: center;
   font-size: 18px;
@@ -169,14 +184,13 @@ body {
   background-color: #f9f9f9;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  white-space: normal;
   animation: fadeIn 1s ease-in;
   opacity: 0;
   animation-fill-mode: forwards;
 }
 
-/* 每行不換行、強制置中顯示 */
-#life-story div {
+/* 每一行固定行數，置中且不自動換行 */
+#life-story .line {
   display: flex;
   justify-content: center;
   white-space: nowrap;
