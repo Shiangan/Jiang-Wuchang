@@ -111,38 +111,46 @@ document.addEventListener('DOMContentLoaded', function () {
         <h1>江武昌先生 訃告</h1>
     </header>
 
-    <main>
-        <!-- 主要照片部分 -->
-        <section class="main-photo-section">
-    <img id="main-photo" src="image/IMG_6329.jpeg" alt="追思照片" loading="lazy">
-    <p id="life-story">
-        <strong>我們摯愛的親人 江武昌先生</strong><br>
-        <strong>於114年06月25日，</strong><br>
-        <strong>晚間09時27分，</strong></strong><br>
-        <strong>走完85年的人生旅程，</strong><br>
-        <strong>留下我們永恆的追思與感恩。</strong><br><br>
-        <strong>將於114年7月18日 星期五 </strong><br>
-        <strong>於 新北市立殯儀館 </strong><br>
-        <strong>［ 明善廳 ］</strong><br>
-        <strong>舉辦告別追思奠禮</strong><br><br>
-        <strong> 敬邀至親好友們蒞臨獻上哀思， </strong><br>
-        <strong> 並向您獻上最深的敬意。 </strong><br><br>
-        <strong> 感謝您的關懷與陪伴，</strong><br>
-        <strong> 家人們銘記在心，衷心感謝。 </strong><br><br>
-        <strong> 豎靈地點：龍華會館 </strong><br>
-        <strong> 地址：新北市板橋區長江路一段7號 </strong><br>
-        <strong> 出殯地點：板橋殯儀館 </strong><br> 
-        <strong> 地址：新北市板橋區中正路560號 </strong><br>
-            
-</section>
+  <main>
+    <!-- 主要照片部分 -->
+    <section class="main-photo-section">
+      <img id="main-photo" src="image/IMG_6329.jpeg" alt="追思照片" loading="lazy">
+      
+      <p id="life-story">
+        <div><strong>我們摯愛的親人 江武昌先生</strong></div>
+        <div><strong>於114年06月25日，晚間09時27分，</strong></div>
+        <div><strong>走完85年的人生旅程，</strong></div>
+        <div><strong>留下我們永恆的追思與感恩。</strong></div>
+        <br>
+        <div><strong>將於114年7月18日 星期五</strong></div>
+        <div><strong>於 新北市立殯儀館 ［ 明善廳 ］</strong></div>
+        <div><strong>舉辦告別追思奠禮</strong></div>
+        <br>
+        <div><strong>敬邀至親好友們蒞臨獻上哀思，</strong></div>
+        <div><strong>並向您獻上最深的敬意。</strong></div>
+        <br>
+        <div><strong>感謝您的關懷與陪伴，</strong></div>
+        <div><strong>家人們銘記在心，衷心感謝。</strong></div>
+        <br>
+        <div><strong>豎靈地點：龍華會館</strong></div>
+        <div><strong>地址：新北市板橋區長江路一段7號</strong></div>
+        <div><strong>出殯地點：板橋殯儀館</strong></div>
+        <div><strong>地址：新北市板橋區中正路560號</strong></div>
+      </p>
+    </section>
+  </main>
+
+</body>
         
 <style>
+body {
+      font-family: "Noto Sans TC", sans-serif;
+      padding: 20px;
+      background-color: #fdfdfd;
+      margin: 0;
+    }
 
-/* 淡入效果 */
-.fade-in-text {
-    opacity: 0;
-    animation: fadeIn 2s forwards;
-}
+
 
 @keyframes fadeIn {
     to {
@@ -164,6 +172,10 @@ document.addEventListener('DOMContentLoaded', function () {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 加上陰影效果 */
     letter-spacing: 0.5px; /* 輕微增加字間距，讓文字更通透 */
 }
+
+        #life-story div {
+      white-space: nowrap;  /* 不允許換行 */
+    }
 
 /* 响应式设计 */
 @media (max-width: 600px) {
