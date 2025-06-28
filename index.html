@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function () {
       <p id="life-story">
         <div><strong>我們摯愛的親人 江武昌先生</strong></div>
         <div><strong>於114年06月25日</strong></div>
-        <div>晚間09時27分</div>
+        <div><strong>晚間09時27分</strong></div>
         <div><strong>走完85年的人生旅程</strong></div>
         <div><strong>留下我們永恆的追思與感恩</strong></div>
         <br>
@@ -142,60 +142,60 @@ document.addEventListener('DOMContentLoaded', function () {
   </main>
 
 </body>
-        
-<style>
+        <style>
 body {
-      font-family: "Noto Sans TC", sans-serif;
-      padding: 20px;
-      background-color: #fdfdfd;
-      margin: 0;
-    }
+  font-family: "Noto Serif", "Noto Sans TC", "MingLiU", serif;
+  padding: 20px;
+  background-color: #fdfdfd;
+  margin: 0;
+}
 
-
-
-
+/* 進場動畫 */
 @keyframes fadeIn {
-    to {
-        opacity: 1;
-    }
+  to {
+    opacity: 1;
+  }
 }
 
 #life-story {
-    text-align: center;
-    font-size: 18px; /* 可以根据需要调整字体大小 */
-    line-height: 1.8; /* 行间距 */
-    margin: 0 auto;
-    max-width: 800px; /* 控制内容的最大宽度 */
-    padding: 20px; /* 适当增加内边距 */
-    font-family: 'Noto Serif', 'MingLiU', serif; /* 使用優雅的字體 */
-    color: #333; /* 調整文字顏色 */
-    background-color: #f9f9f9; /* 背景顏色讓文字更加突出 */
-    border-radius: 10px; /* 圓角效果 */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 加上陰影效果 */
-    letter-spacing: 0.5px; /* 輕微增加字間距，讓文字更通透 */
-    white-space: normal;
+  text-align: center;
+  font-size: 18px;
+  line-height: 2;
+  letter-spacing: 1px;
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 20px;
+  color: #333;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  white-space: normal;
+  animation: fadeIn 1s ease-in;
+  opacity: 0;
+  animation-fill-mode: forwards;
 }
 
-        #life-story div {
-      white-space: nowrap;  /* 不允許換行 */
-    }
+/* 每行不換行、強制置中顯示 */
+#life-story div {
+  display: flex;
+  justify-content: center;
+  white-space: nowrap;
+}
 
-
-/* 响应式设计 */
+/* 響應式字體調整 */
 @media (max-width: 600px) {
-    #life-story {
-        font-size: 16px; /* 小屏幕上字体略小 */
-        padding: 15px; /* 减少内边距 */
-    }
+  #life-story {
+    font-size: 16px;
+    padding: 15px;
+  }
 }
 
 @media (max-width: 400px) {
-    #life-story {
-        font-size: 14px; /* 更小屏幕上的字体大小 */
-        padding: 10px; /* 更小的内边距 */
-    }
+  #life-story {
+    font-size: 14px;
+    padding: 10px;
+  }
 }
-
 </style>
 
         <!-- 訃告紙本部分 -->
